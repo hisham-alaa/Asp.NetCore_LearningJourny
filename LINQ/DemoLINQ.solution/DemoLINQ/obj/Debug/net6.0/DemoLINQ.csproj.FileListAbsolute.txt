@@ -1,0 +1,15 @@
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\bin\Debug\net6.0\DemoLINQ.exe
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\bin\Debug\net6.0\DemoLINQ.deps.json
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\bin\Debug\net6.0\DemoLINQ.runtimeconfig.json
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\bin\Debug\net6.0\DemoLINQ.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\bin\Debug\net6.0\DemoLINQ.pdb
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.csproj.AssemblyReference.cache
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.AssemblyInfoInputs.cache
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.AssemblyInfo.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.csproj.CoreCompileInputs.cache
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\refint\DemoLINQ.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.pdb
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\DemoLINQ.genruntimeconfig.cache
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\LINQ\DemoLINQ.solution\DemoLINQ\obj\Debug\net6.0\ref\DemoLINQ.dll
