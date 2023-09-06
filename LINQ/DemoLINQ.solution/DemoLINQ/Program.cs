@@ -246,9 +246,16 @@ namespace DemoLINQ
 
             #endregion
 
-            #region
+            #region Aggregation Operators (Count, Min, Max, Sum, Average, Aggregate)
 
-            ///
+            ///Count returns the number of Elements in the sequence
+            var Result=ProductsList.Count();//the same as using the property it sends to me the property Count value
+            ///has overload which takes predicate as argument and returns the num of elements match that condition
+            Result = ProductsList.Count(p => p.UnitsInStock == 0);//now it has meaning of such method
+            Console.WriteLine(Result);
+
+            ///Max returns the max element and it uses the CompareTo Method so this element type must implement IComparable  
+
 
             #endregion
 
