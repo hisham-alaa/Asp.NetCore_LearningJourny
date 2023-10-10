@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css"/>
+        <title>@ViewBag.Title</title>
+        <style>
+            nav{
+                background-color:gray;
+                display:flex;
+                justify-content:space-around;
+                align-items:center;
+            }
+            *{
+                text-decoration:none;
+                margin:0;
+                padding:0;
+            }
+        </style>
+    </head>
+    <!-- this is your html page -->
+    @* this is for multiple line comment in c# *@
+    <body>
+
+        <nav>
+            <a asp-action="Index" >Home</a>
+            <a asp-action="AboutUs" >About us</a>
+            <a asp-action="Privacy">Privacy</a>
+            <a asp-action="ContactUs">Contact Us</a>
+        </nav>
+
+
+        @RenderBody()
+
+
+        <footer>Copyrights reserved &copy; @DateTime.Now.Year </footer>
+
+    </body>
+</html>
+

@@ -142,8 +142,6 @@ namespace DemoEFCore01
 
             #endregion
 
-
-
         }
     }
 }

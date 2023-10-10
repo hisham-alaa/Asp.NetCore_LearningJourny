@@ -13,10 +13,10 @@ namespace AssignmentEFCore01.Configurations
     {
         public void Configure(EntityTypeBuilder<StudentCourse> b)
         {
-            b.ToTable("StudentCourse");
-            b.HasKey(b => new { b.StudentId, b.CourseId });
-            b.Property(t => t.Grade)
-             .HasColumnType("float");
+            //b.ToTable("StudentCourse");
+            //b.HasKey(b => new { b.StudentId, b.CourseId });
+            //b.Property(t => t.Grade)
+            // .HasColumnType("float");
         }
     }
 }

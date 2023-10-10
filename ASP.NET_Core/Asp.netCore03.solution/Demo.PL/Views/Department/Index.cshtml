@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Department>
+@{
+
+    ViewData["Title"] = "All Departments";
+}
+
+<h1 class="m-2">
+    All Departments
+</h1>
+
+<br />
+<hr />
+
+<a asp-action="Create" class="btn btn-primary p-1">
+    Create Department
+</a>
+
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped table-hover mt-3">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(d=>d.Code)</th>
+                <th>@Html.DisplayNameFor(d=>d.Name)</th>
+                <th>@Html.DisplayNameFor(d=>d.DateOfCreation)</th>
+                <th>Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in Model)
+            {
+                <tr>
+                    <td>@d.Code</td>
+                    <td>@d.Name</td>
+                    <td>@d.DateOfCreation.Date</td>
+                    <td>
+                        <a asp-controller="Department" asp-action="Details" asp-route-id="@d.Id" class="btn btn-warning">
+                            <i class="fas fa-eye"></i> Details
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Department" asp-action="Update" asp-route-id="@d.Id" class="btn btn-success">
+                            <i class="fas fa-edit"></i> Update
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Department" asp-action="Delete" asp-route-id="@d.Id" class="btn btn-danger">
+                            <i class="fas fa-trash"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+}
+else
+{
+    <div class="mt-4 alert alert-warning">
+        There Is No Department !
+    </div>
+}
+

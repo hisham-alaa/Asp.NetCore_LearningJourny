@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,9 @@ namespace AssignmentEFCore01.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Course> courses = new List<Course>();
+
+        [InverseProperty("Topic")]
+        public ICollection<Course> Courses { get; set; } = new HashSet<Course>();
 
 
 

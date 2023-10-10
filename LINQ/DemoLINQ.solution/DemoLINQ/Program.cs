@@ -1,4 +1,5 @@
-﻿using static DemoLINQ.ListGenerator;
+﻿using System.Reflection.Metadata.Ecma335;
+using static DemoLINQ.ListGenerator;
 
 namespace DemoLINQ
 {
@@ -35,13 +36,14 @@ namespace DemoLINQ
 
             #region Extension methods  
 
-            ///Basically it extend the class with method that i defined without add it to the class actually
-            ///because of any reason may be you don't have the access to this class you just have the dll 
-            ///file or anyother reason and you can call the method through the obj or variable of this class it extend 
+            ///- Basically it extend the class with method that I Have defined without add it actually to the class body
+            ///  because of any reason may be you don't have the access to this class and you just have the dll 
+            ///  file or anyother reason. 
+            ///- you can call the method through the obj or variable of this class it extend 
             ///int X = 1236;
             ///Console.WriteLine(X.ReverseInt());
             ///Console.WriteLine(ReverseInt(X));
-            ///we can call it as an static method or as a method in this datatype 
+            ///we can call it as an static method or as a method in this datatype we try to extend it with this method.
 
             #endregion
 
@@ -70,13 +72,13 @@ namespace DemoLINQ
             #region Intro To LINQ
 
             ///- LINQ Stands for Language Integrated Query
-            ///- Its a layer between me as a C# program and the database what ever its sql type(oracle, server, MySql...etc)           
+            ///- Its a layer between me as a C# program and the database what ever its sql type(oracle, sqlserver, MySql...etc)           
             ///- 40+ C# function Against data(Stored in Sequence) regardless of Data store
             ///  (SQL Server , MySql, Static, XML)
             ///- Extension Functions for any Class implementing the IEnumerable Interface (any object of them is called Sequence).
             ///- Sequence:
-            ///     Local  => Static (written by me as developer) or XML File. LINQ to OBJ, LINQ to XML 
-            ///     Remote => a database (need a connection to be establish). LINQ to EF 
+            ///     Local sequence  => Static (written by me as a developer) or XML File. LINQ to OBJ, LINQ to XML 
+            ///     Remote sequence => a database (need a connection to be establish). LINQ to EF 
             ///
             ///List<int> list = new List<int>() { 0, 1, 2, 7, 3, 4, 5};
             ///list.Where(e => e > 5);
@@ -87,7 +89,7 @@ namespace DemoLINQ
             ///- All Collections implements IEnumerable
             ///- Named as LINQ Operators Existed at class Enumerable
             ///- categorized into 13 category 
-            ///     10 Differed  Functions
+            ///     10 Differed  Functions  (Look at Linq Execution ways)
             ///     3  Immediate Functions 
 
             #endregion
@@ -198,7 +200,7 @@ namespace DemoLINQ
 
             #endregion
 
-            #region Element Operators (First, Last, FirstOrDefault, LastOrDefault, Single, SingleOrDefault)
+            #region Element Operators[Immediate Execution] (First, Last, FirstOrDefault, LastOrDefault, Single, SingleOrDefault)
 
             ///First returns First element (NO Argument) Throw Exception if it is empty
             ///var Result = ProductsList.First();
@@ -246,16 +248,71 @@ namespace DemoLINQ
 
             #endregion
 
-            #region Aggregation Operators (Count, Min, Max, Sum, Average, Aggregate)
+            #region Aggregation Operators-[Immediate Execution] (Count, Min, Max, Sum, Average, Aggregate)
 
-            ///Count returns the number of Elements in the sequence
-            var Result=ProductsList.Count();//the same as using the property it sends to me the property Count value
+            ///Count returns the number of Elements in the sequence(With or without condition)
+            ///var Result =ProductsList.Count();//the same as using the property it sends to me the property Count value
             ///has overload which takes predicate as argument and returns the num of elements match that condition
-            Result = ProductsList.Count(p => p.UnitsInStock == 0);//now it has meaning of such method
-            Console.WriteLine(Result);
+            ///Result = ProductsList.Count(p => p.UnitsInStock == 0);//now it has meaning of such method
+            ///Console.WriteLine(Result);
 
-            ///Max returns the max element and it uses the CompareTo Method so this element type must implement IComparable  
+            ///Max returns the max element and it uses the CompareTo Method so this element type must implement IComparable
+            ///OR We can create a class that implements Icomparer and use the MaxBy operator (C# 10.0 Feature) 
+            ///var Result = ProductsList.Max();
+            ///OR
+            ///Result=ProductsList.MaxBy(p=>p.UnitsInStock);//returns the max based on a predicate as argument
+            ///OR
+            ///Result= ProductsList.Max(new MyComparer());
+            ///Console.WriteLine(Result);
 
+            ///Min same as the max returns the min value and must have an implementation for the icomparable interface
+            ///also we have MinBy operator 
+
+            ///Average returns the average value
+            ///var Result = ProductsList.Average(p => p.UnitPrice);
+            ///Console.WriteLine(Result);
+
+            ///Aggregate returns the composition of all items together.
+            ///string[] Names = { "Ali", "Mohamed", "Mahmoud", "Nasser" };
+            ///var res = Names.Aggregate((p1, p2) => $"{p1} {p2}");
+            ///Console.WriteLine(res);
+
+            #endregion
+
+            #region Casting Operators-[Immediate Execution] (ToList, ToHashSet, ToArray, ...etc)
+
+            ///List<Product> products = ProductsList.Where(p=>p.UnitsInStock>7).ToList();
+            ///
+            ///Dictionary<long,/*string*/Product> dictionary = ProductsList.Where(p => p.UnitsInStock > 7).ToDictionary(p => p.ProductID/*,p=>p.ProductName*/);
+
+            #endregion
+
+            #region Generation Operators (Range, Repeat, Empty<IEnumerable>)
+
+            ///var Result1 = Enumerable.Range(0, 100);//0...99
+            ///
+            ///var Result2 = Enumerable.Repeat(2, 5);//2 2 2 2 2
+            ///
+            ///var Result3=Enumerable.Empty<Product>();
+            ///
+            ///foreach (var item in Result2)
+            ///    Console.WriteLine(item);
+
+            #endregion
+
+            #region Set Operators (Union, Intersect, Except,  )
+
+
+
+            #endregion
+
+
+
+            string res = "what if we have ";
+            res.Replace("if", "hello");
+            Console.WriteLine(res.Replace("if", "hello"));
+
+            #region Join Operators (Join, GroupJoin )
 
             #endregion
 

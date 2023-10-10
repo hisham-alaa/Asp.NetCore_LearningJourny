@@ -66,6 +66,9 @@ namespace DemoEFCore01.Migrations
                     b.Property<int?>("Age")
                         .HasColumnType("int");
 
+                    b.Property<int?>("DepartmentDeptId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -76,7 +79,23 @@ namespace DemoEFCore01.Migrations
 
                     b.HasKey("EmpId");
 
+                    b.HasIndex("DepartmentDeptId");
+
                     b.ToTable("Employees", "dbo");
+                });
+
+            modelBuilder.Entity("DemoEFCore01.Entities.Employee", b =>
+                {
+                    b.HasOne("DemoEFCore01.Entities.Department", "Department")
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentDeptId");
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("DemoEFCore01.Entities.Department", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

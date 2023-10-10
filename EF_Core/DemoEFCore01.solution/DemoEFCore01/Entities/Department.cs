@@ -16,5 +16,9 @@ namespace DemoEFCore01.Entities
         public int MgrId { get; set;}
         public DateTime DateOfCreation { get; set; }
 
+        [InverseProperty("Department")]
+        public ICollection<Employee> Employees { get; set; }=new HashSet<Employee>();  
+        ///The Default for the navigation property is one relation ship
+
     }
 }

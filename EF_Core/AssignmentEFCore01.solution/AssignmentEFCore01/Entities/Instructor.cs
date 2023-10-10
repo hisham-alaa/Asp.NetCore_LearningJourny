@@ -17,8 +17,9 @@ namespace AssignmentEFCore01.Entities
 
         public string Name { get; set; }
 
-        [Column(TypeName = "double")]
+        [Column(TypeName = "float")]
         public double Bonus { get; set; }
+
         [Column(TypeName ="money")]
         public double Salary { get; set; }
 
@@ -26,7 +27,11 @@ namespace AssignmentEFCore01.Entities
 
         public double HourRate { get; set; }
 
-        public Department Department { get; set; }
+        [InverseProperty("Instructors")]
+        public Department InstructorDepartment { get; set; }
+        
 
+        [InverseProperty("Instructor")]
+        public ICollection<CourseInstructor> InstructorCourses { get; set; } = new HashSet<CourseInstructor>();
     }
 }

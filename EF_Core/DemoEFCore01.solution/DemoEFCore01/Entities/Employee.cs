@@ -62,6 +62,12 @@ namespace DemoEFCore01.Entities
         [NotMapped]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public int? DepartmentDeptId { get; set; }
+
+        //[ForeignKey("Dept")]
+        [InverseProperty("Employees")]
+        public Department Department { get; set; }
     }
 
 }
