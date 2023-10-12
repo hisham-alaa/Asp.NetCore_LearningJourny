@@ -442,3 +442,8 @@ F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\D
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Department\Details.cshtml.g.cs
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Department\Update.cshtml.g.cs
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Department\Delete.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Create.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Delete.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Details.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Update.cshtml.g.cs

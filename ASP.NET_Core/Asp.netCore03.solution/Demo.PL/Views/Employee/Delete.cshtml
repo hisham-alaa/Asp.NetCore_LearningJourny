@@ -1,0 +1,50 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Employee Deletion</h1>
+<h4 class="text-danger">Are You Sure You want to Delete it?</h4>
+<br />
+<hr />
+
+<form asp-action="Delete">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Salary"></label>
+        <input asp-for="Salary" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="IsActive"></label>
+        <input asp-for="IsActive" class="form-control" disabled />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label class="col-form-label" asp-for="HireDate"></label>
+        <input asp-for="HireDate" class="form-control" readonly />
+    </div>
+    <input type="submit" value="Delete" class="btn btn-danger"> |
+    <a class="btn btn-dark" asp-action="Index">Cancel</a>
+</form>
+
+
