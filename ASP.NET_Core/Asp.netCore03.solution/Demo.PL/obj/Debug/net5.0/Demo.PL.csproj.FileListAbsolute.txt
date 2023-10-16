@@ -447,3 +447,6 @@ F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\D
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Details.cshtml.g.cs
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Index.cshtml.g.cs
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\Update.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Shared\_ButtonsPartial.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\PartialViews\_CreateUpdatePartial.cshtml.g.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\obj\Debug\net5.0\Razor\Views\Employee\PartialViews\_DeleteDetailsPartial.cshtml.g.cs

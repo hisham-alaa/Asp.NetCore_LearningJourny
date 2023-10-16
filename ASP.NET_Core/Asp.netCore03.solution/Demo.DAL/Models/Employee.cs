@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Demo.DAL.Models
 {
-    public class Employee
+    public class Employee : ModelBase
     {
         public int Id { get; set; }
 
@@ -27,17 +28,26 @@ namespace Demo.DAL.Models
         [DataType(DataType.Currency)]
         public decimal Salary { get; set; }
 
+        [Display(Name = "Active")]
         public bool IsActive { get; set; }
 
 
         [EmailAddress]/*[DataType(DataType.EmailAddress)]*/
         public string Email { get; set; }
 
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
+        [Display(Name = "Hiring Date")]
         public DateTime HireDate { get; set; }
 
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
+        public bool IsDeleted { get; set; }
+
+        public int? DepartmentId { get; set; }
+
+        [InverseProperty(nameof(Models.Department.Employees))]
+        public virtual Department Department { get; set; }
     }
 }

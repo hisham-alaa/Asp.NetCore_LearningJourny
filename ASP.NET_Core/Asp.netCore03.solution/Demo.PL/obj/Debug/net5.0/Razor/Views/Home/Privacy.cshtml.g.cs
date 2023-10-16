@@ -33,8 +33,15 @@ using Demo.DAL.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "F:\Projects\Asp.Net\Asp.NetCore_Practicing\ASP.NET_Core\Asp.netCore03.solution\Demo.PL\Views\_ViewImports.cshtml"
+using Demo.BLL.Interfaces;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"0e00a4445b214863ea51c8985fae1970b43e932712216fa047faf3062bb23445", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"471a4eb02c9e5537226177c6b1f1546a782bb33edd4b4ccc461d111edb4d3f68", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA256", @"6f2a9e5bf23bbdbe876f5a0e6a9e104f22e6b462e00c51c7d27c9142b6982c50", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,12 @@ namespace Demo.DAL.Contexts
         //    => optionsBuilder.UseSqlServer("Server = .; Database = MVC01; Trusted_Connection = true;"); //MultipleLineResultSets = true
 
         public DbSet<Department> Departments { get; set; }
-        public DbSet<Employee> employees { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
 
 
     }

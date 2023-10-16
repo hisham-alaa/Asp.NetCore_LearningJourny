@@ -8,14 +8,17 @@ namespace Demo.PL.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
+        //private readonly IDepartmentRepository departmentRepository;
 
-        public EmployeeController(IEmployeeRepository employeeRepository)
+        public EmployeeController(IEmployeeRepository employeeRepository /*,IDepartmentRepository departmentRepository*/)
         {
             _employeeRepository = employeeRepository;
+            //this.departmentRepository = departmentRepository;
         }
 
         public IActionResult Index()
         {
+            //ViewBag.Msg = "Hello world from employee";
             var AllEmployees = _employeeRepository.GetAll();
 
             return View(AllEmployees);
@@ -24,6 +27,8 @@ namespace Demo.PL.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            //ViewData["Department"] = departmentRepository.GetAll();
+
             return View();
         }
 
@@ -40,6 +45,9 @@ namespace Demo.PL.Controllers
 
         public IActionResult Details(int? Id, string viewName = "Details")
         {
+            //TempData["curruntAction"] = viewName;
+            //ViewData["Department"] = departmentRepository.GetAll();
+
             if (Id is null)
                 return BadRequest(nameof(Id));
 
@@ -51,6 +59,8 @@ namespace Demo.PL.Controllers
 
         public IActionResult Update(int? Id)
         {
+            //ViewData["Department"] = departmentRepository.GetAll();
+
             return Details(Id, "Update");
         }
 
@@ -79,6 +89,8 @@ namespace Demo.PL.Controllers
 
         public IActionResult Delete(int Id)
         {
+            //ViewData["Department"] = departmentRepository.GetAll();
+
             return Details(Id, "Delete");
         }
 

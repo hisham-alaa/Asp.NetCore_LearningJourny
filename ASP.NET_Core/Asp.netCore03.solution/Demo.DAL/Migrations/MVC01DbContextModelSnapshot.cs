@@ -59,6 +59,9 @@ namespace Demo.DAL.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("DepartmentId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
@@ -66,6 +69,9 @@ namespace Demo.DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -81,7 +87,24 @@ namespace Demo.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("employees");
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("Demo.DAL.Models.Employee", b =>
+                {
+                    b.HasOne("Demo.DAL.Models.Department", "Department")
+                        .WithMany("Employees")
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("Demo.DAL.Models.Department", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

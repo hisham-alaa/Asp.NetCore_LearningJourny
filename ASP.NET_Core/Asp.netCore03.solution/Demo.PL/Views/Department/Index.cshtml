@@ -36,21 +36,7 @@
                     <td>@d.Code</td>
                     <td>@d.Name</td>
                     <td>@d.DateOfCreation.Date</td>
-                    <td>
-                        <a asp-controller="Department" asp-action="Details" asp-route-id="@d.Id" class="btn btn-warning">
-                            <i class="fas fa-eye"></i> Details
-                        </a>
-                    </td>
-                    <td>
-                        <a asp-controller="Department" asp-action="Update" asp-route-id="@d.Id" class="btn btn-success">
-                            <i class="fas fa-edit"></i> Update
-                        </a>
-                    </td>
-                    <td>
-                        <a asp-controller="Department" asp-action="Delete" asp-route-id="@d.Id" class="btn btn-danger">
-                            <i class="fas fa-trash"></i> Delete
-                        </a>
-                    </td>
+                    <partial name="_ButtonsPartial" model="@d.Id" />
                 </tr>
             }
         </tbody>

@@ -1,6 +1,7 @@
 ﻿using Demo.BLL.Interfaces;
 using Demo.DAL.Contexts;
 using Demo.DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Demo.BLL.Repositories
 {
-    public class GenericRepository<Item> : IGenericRepository<Item> where Item : class
+    public class GenericRepository<Item> : IGenericRepository<Item> where Item : ModelBase
     {
-        private readonly MVC01DbContext _dbContext;
+        public readonly MVC01DbContext _dbContext;
 
         public GenericRepository(MVC01DbContext InjectedDbContext)
         {
@@ -32,7 +33,11 @@ namespace Demo.BLL.Repositories
 
         public IEnumerable<Item> GetAll()
         {
-            return _dbContext.Set<Item>().ToList();
+            if ((typeof(Item) == typeof(Employee)))
+            {
+                return (IEnumerable<Item>)_dbContext.Employees.Include(e => e.Department).AsNoTracking().ToList();
+            }
+            return _dbContext.Set<Item>().AsNoTracking().ToList();
         }
 
         public Item GetById(int id)

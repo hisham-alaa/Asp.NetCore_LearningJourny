@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace Demo.DAL.Models
 {
-    public class Department
+    public class Department : ModelBase
     {
-        public int Id { get; set; }
 
         [Required(ErrorMessage = "Code Is Required!")]
         public string Code { get; set; }
@@ -21,5 +20,7 @@ namespace Demo.DAL.Models
 
         [DisplayName("Date Of Creation")]
         public DateTime DateOfCreation { get; set; }
+
+        public virtual ICollection<Employee> Employees { get; set; } = new HashSet<Employee>();
     }
 }
