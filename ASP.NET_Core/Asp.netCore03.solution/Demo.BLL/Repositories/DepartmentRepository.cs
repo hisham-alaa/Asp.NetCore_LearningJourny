@@ -15,5 +15,10 @@ namespace Demo.BLL.Repositories
         public DepartmentRepository(MVC01DbContext InjectedDbContext) : base(InjectedDbContext)
         {
         }
+
+        public IQueryable<Department> SearchByName(string Name)
+        {
+            return _dbContext.Departments.Where(d => d.Name.ToLower().Contains(Name.ToLower()));
+        }
     }
 }

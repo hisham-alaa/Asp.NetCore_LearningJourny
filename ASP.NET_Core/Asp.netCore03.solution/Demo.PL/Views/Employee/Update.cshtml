@@ -1,4 +1,4 @@
-﻿@model Employee
+﻿@model EmployeeViewModel
 @{
     ViewData["Title"] = "Update";
 }
@@ -7,9 +7,10 @@
 <br />
 <hr />
 
-<form asp-action="Update">
+<form asp-action="Update" enctype="multipart/form-data">
     <div asp-validation-summary="All"></div>
     <partial name="PartialViews/_CreateUpdatePartial" model="@Model" />
+    <input type="hidden" asp-for="ImageName" />
 
     <input type="submit" value="Save" class="btn btn-primary" /> |
     <input type="reset" value="Original Data" class="btn btn-secondary" /> |

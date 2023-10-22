@@ -9,6 +9,6 @@ namespace Demo.BLL.Interfaces
 {
     public interface IDepartmentRepository : IGenericRepository<Department>
     {
-
+        IQueryable<Department> SearchByName(string Name);
     }
 }

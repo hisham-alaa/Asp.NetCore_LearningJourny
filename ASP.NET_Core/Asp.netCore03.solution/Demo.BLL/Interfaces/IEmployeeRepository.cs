@@ -9,7 +9,9 @@ namespace Demo.BLL.Interfaces
 {
     public interface IEmployeeRepository : IGenericRepository<Employee>
     {
-        Employee GetEmployeeByAddress(string Address);
+        IQueryable<Employee> GetEmployeesByAddress(string Address);
+
+        IQueryable<Employee> SearchByName(string Name);
 
     }
 }

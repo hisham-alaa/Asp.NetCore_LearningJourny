@@ -16,6 +16,15 @@ namespace Demo.DAL.Configurations
             builder.HasOne(e => e.Department)
                 .WithMany(d => d.Employees)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Property(e => e.Name)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            builder.Property(e => e.Salary)
+                .HasColumnType("decimal(18,2)");
+            builder.Property(e => e.ImageName)
+                .IsRequired(false);
         }
     }
 }

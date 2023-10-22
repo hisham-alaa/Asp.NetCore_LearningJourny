@@ -15,9 +15,14 @@ namespace Demo.BLL.Repositories
         {
         }
 
-        public Employee GetEmployeeByAddress(string Address)
+        public IQueryable<Employee> GetEmployeesByAddress(string Address)
         {
-            return _dbContext.Employees.Where(e => e.Address == Address).FirstOrDefault();
+            return _dbContext.Employees.Where(e => e.Address == Address);
+        }
+
+        public IQueryable<Employee> SearchByName(string Name)
+        {
+            return _dbContext.Employees.Where(e => e.Name.ToLower().Contains(Name.ToLower()));
         }
     }
 }

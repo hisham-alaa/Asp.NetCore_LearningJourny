@@ -1,9 +1,13 @@
-﻿@model Employee
-@inject IDepartmentRepository departmentRepo
+﻿@model EmployeeViewModel
+@inject IUnitOfWork UOF
 
 @{
-    var departments = new SelectList(departmentRepo.GetAll(), nameof(Department.Id), nameof(Department.Name));
+    var departments = new SelectList(await UOF.DepartmentRepo.GetAllAsync(), nameof(Department.Id), nameof(Department.Name));
 }
+
+<img src="~/files/Images/@Model.ImageName"
+     style="display: flex; width:250px; height:250px; border-radius:50%; margin:10px auto" />
+
 
 <div class="form-group">
     <label class="col-form-label" asp-for="Name"></label>

@@ -2,24 +2,29 @@
 using Demo.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Demo.PL.Controllers
 {
     public class DepartmentController : Controller
     {
-        private readonly IDepartmentRepository _departmentRepository;
+        private readonly IUnitOfWork UOW;
 
-        public DepartmentController(IDepartmentRepository departmentRepository)
+        //private readonly IDepartmentRepository _departmentRepository;
+
+        public DepartmentController(IUnitOfWork UOW/*IDepartmentRepository departmentRepository*/)
         {
-            _departmentRepository = departmentRepository;
+            this.UOW = UOW;
         }
 
         // /Department/Index
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string searchText)
         {
-            var AllDepartments = _departmentRepository.GetAll();
+            if (string.IsNullOrEmpty(searchText))
+                return View(await UOW.DepartmentRepo.GetAllAsync());
 
-            return View(AllDepartments);
+            return View(UOW.DepartmentRepo.SearchByName(searchText));
         }
 
         [HttpGet]
@@ -29,28 +34,29 @@ namespace Demo.PL.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Department d)
+        public async Task<IActionResult> Create(Department d)
         {
             if (ModelState.IsValid)
             {
-                _departmentRepository.Create(d);
+                UOW.DepartmentRepo.Create(d);
+                await UOW.CompleteAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(d);
         }
 
-        public IActionResult Details(int? Id, string viewName = "Details")
+        public async Task<IActionResult> Details(int? Id, string viewName = "Details")
         {
             if (Id is null)
                 return BadRequest(nameof(Id));
 
-            var department = _departmentRepository.GetById(Id.Value);
+            var department = await UOW.DepartmentRepo.GetByIdAsync(Id.Value);
             if (department is null)
                 return NotFound();
             return View(viewName, department);
         }
 
-        public IActionResult Update(int? Id)
+        public async Task<IActionResult> Update(int? Id)
         {
             ///if (Id is null)
             ///    return BadRequest(nameof(Id));
@@ -60,12 +66,12 @@ namespace Demo.PL.Controllers
             ///    return NotFound();
             ///return View(department);
 
-            return Details(Id, "Update");
+            return await Details(Id, "Update");
         }
 
         ///[ValidateAntiForgeryToken]// to throw error once a foregin source try to access 
         [HttpPost]
-        public IActionResult Update([FromRoute] int id, Department d)
+        public async Task<IActionResult> Update([FromRoute] int id, Department d)
         {
             if (id != d.Id)
                 return BadRequest();
@@ -74,7 +80,8 @@ namespace Demo.PL.Controllers
             {
                 try
                 {
-                    _departmentRepository.Update(d);
+                    UOW.DepartmentRepo.Update(d);
+                    await UOW.CompleteAsync();
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception e)
@@ -86,20 +93,21 @@ namespace Demo.PL.Controllers
             return View(d);
         }
 
-        public IActionResult Delete(int Id)
+        public async Task<IActionResult> Delete(int Id)
         {
-            return Details(Id, "Delete");
+            return await Details(Id, "Delete");
         }
 
         [HttpPost]
-        public IActionResult Delete([FromRoute] int id, Department d)
+        public async Task<IActionResult> Delete([FromRoute] int id, Department d)
         {
             if (id != d.Id)
                 return BadRequest();
 
             try
             {
-                _departmentRepository.Delete(d);
+                UOW.DepartmentRepo.Delete(d);
+                await UOW.CompleteAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception e)

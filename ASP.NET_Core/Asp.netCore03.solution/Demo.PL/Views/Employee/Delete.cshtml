@@ -1,4 +1,4 @@
-﻿@model Employee
+﻿@model EmployeeViewModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -11,7 +11,7 @@
 
 <form asp-action="Delete">
     <div asp-validation-summary="All"></div>
-
+    <input type="hidden" asp-for="ImageName" />
     <partial name="PartialViews/_DeleteDetailsPartial" model="@Model" />
     <input type="submit" value="Delete" class="btn btn-danger"> |
     <a class="btn btn-dark" asp-action="Index">Cancel</a>

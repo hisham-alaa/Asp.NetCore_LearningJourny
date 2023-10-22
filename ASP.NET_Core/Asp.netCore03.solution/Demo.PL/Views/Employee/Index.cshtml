@@ -1,6 +1,5 @@
-﻿@model IEnumerable<Employee>
+﻿@model IEnumerable<EmployeeViewModel>
 @{
-
     ViewData["Title"] = "All Employees";
 }
 
@@ -29,10 +28,19 @@
 
 @if (Model.Count() > 0)
 {
+    <form asp-action="index" style="display:flex;justify-content:right;">
+        <div class="form-group mr-1">
+            <input class="form-control" name="searchText" id="searchInp" placeholder="Search" />
+        </div>
+        <div>
+            <input class="form-control btn btn-success" id="SearchSubmit" type="submit" value="search" />
+        </div>
+    </form>
     <table class="table table-striped table-hover mt-3">
         <thead>
             <tr>
                 <th>@Html.DisplayNameFor(e=>e.Name)</th>
+                <th>Image</th>
                 <th>@Html.DisplayNameFor(e=>e.Age)</th>
                 <th>@Html.DisplayNameFor(e=>e.Address)</th>
                 <th>@Html.DisplayNameFor(e=>e.Email)</th>
@@ -51,6 +59,10 @@
             {
                 <tr>
                     <td>@e.Name</td>
+                    <td>
+                        <img src="~/files/Images/@e.ImageName"
+                             style="display: flex; width:50px; height:50px; border-radius:50%;margin:0px auto" />
+                    </td>
                     <td>@e.Age</td>
                     <td>@e.Address</td>
                     <td>@e.Email</td>
@@ -73,3 +85,13 @@ else
     </div>
 }
 
+@*
+<script>
+    const Search = document.getElementById("searchInp");
+    Search.addEventListener("input", e => {
+        e.preventDefault();
+        document.getElementById("SearchSubmit").click;
+    })
+
+</script>
+*@
