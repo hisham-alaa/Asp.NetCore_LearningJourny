@@ -70,3 +70,6 @@ F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\Talabat.solution\T
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\Talabat.solution\Talabat.APIs\bin\Debug\net6.0\Talabat.Repository.dll
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\Talabat.solution\Talabat.APIs\bin\Debug\net6.0\Talabat.Repository.pdb
 F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\Talabat.solution\Talabat.APIs\bin\Debug\net6.0\Talabat.Core.pdb
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\Talabat.solution\Talabat.APIs\bin\Debug\net6.0\AutoMapper.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\Talabat.solution\Talabat.APIs\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\Talabat.solution\Talabat.APIs\bin\Debug\net6.0\Talabat.APIs.staticwebassets.runtime.json
