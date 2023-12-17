@@ -1,0 +1,14 @@
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\bin\Debug\net6.0\BridgeDP.exe
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\bin\Debug\net6.0\BridgeDP.deps.json
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\bin\Debug\net6.0\BridgeDP.runtimeconfig.json
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\bin\Debug\net6.0\BridgeDP.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\bin\Debug\net6.0\BridgeDP.pdb
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\BridgeDP.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\BridgeDP.AssemblyInfoInputs.cache
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\BridgeDP.AssemblyInfo.cs
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\BridgeDP.csproj.CoreCompileInputs.cache
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\BridgeDP.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\refint\BridgeDP.dll
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\BridgeDP.pdb
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\BridgeDP.genruntimeconfig.cache
+F:\Projects\Asp.Net\Asp.NetCore_Practicing\Asp.netCoreWebApis\DesignPatterns.solution\BridgeDP\obj\Debug\net6.0\ref\BridgeDP.dll
